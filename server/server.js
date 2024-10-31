@@ -16,7 +16,7 @@ const server = new ApolloServer({
 });
 
 // Connect to MongoDB using Mongoose
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/yourDatabaseName', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
