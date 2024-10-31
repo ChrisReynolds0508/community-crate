@@ -1,6 +1,6 @@
 const User = require('./User');
 const Product = require('./Product');
-const Category = require('./Category');
+const Filter = require('./Filter');
 const Order = require('./Order');
 
-module.exports = { User, Product, Category, Order };
+module.exports = { User, Product, Filter, Order };
