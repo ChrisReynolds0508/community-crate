@@ -10,7 +10,7 @@ import spinner from '../../assets/spinner.gif';
 function ProductList() {
   const [state, dispatch] = useStoreContext();
 
-  const { currentCategory } = state;
+  const { currentFilter } = state;
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
@@ -34,12 +34,12 @@ function ProductList() {
   }, [data, loading, dispatch]);
 
   function filterProducts() {
-    if (!currentCategory) {
+    if (!currentFilter) {
       return state.products;
     }
 
     return state.products.filter(
-      (product) => product.category._id === currentCategory
+      (product) => product.filter._id === currentFilter
     );
   }
 

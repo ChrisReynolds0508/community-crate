@@ -2,49 +2,49 @@ import { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { useStoreContext } from '../../utils/GlobalState';
 import {
-  UPDATE_CATEGORIES,
-  UPDATE_CURRENT_CATEGORY,
+  UPDATE_FILTERS,
+  UPDATE_CURRENT_FILTER,
 } from '../../utils/actions';
-import { QUERY_CATEGORIES } from '../../utils/queries';
+import { QUERY_FILTERS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 
-function CategoryMenu() {
+function FilterMenu() {
   const [state, dispatch] = useStoreContext();
 
-  const { categories } = state;
+  const { filters } = state;
 
-  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
+  const { loading, data: filterData } = useQuery(QUERY_FILTERS);
 
   useEffect(() => {
-    if (categoryData) {
+    if (filterData) {
       dispatch({
-        type: UPDATE_CATEGORIES,
-        categories: categoryData.categories,
+        type: UPDATE_FILTERS,
+        filters: filterData.filters,
       });
-      categoryData.categories.forEach((category) => {
-        idbPromise('categories', 'put', category);
+      filterData.filters.forEach((filter) => {
+        idbPromise('filters', 'put', filter);
       });
     } else if (!loading) {
-      idbPromise('categories', 'get').then((categories) => {
+      idbPromise('filters', 'get').then((filters) => {
         dispatch({
-          type: UPDATE_CATEGORIES,
-          categories: categories,
+          type: UPDATE_FILTERS,
+          filters: filters,
         });
       });
     }
-  }, [categoryData, loading, dispatch]);
+  }, [filterData, loading, dispatch]);
 
   const handleClick = (id) => {
     dispatch({
-      type: UPDATE_CURRENT_CATEGORY,
-      currentCategory: id,
+      type: UPDATE_CURRENT_FILTER,
+      currentFilter: id,
     });
   };
 
   return (
     <div>
-      <h2>Choose a Category:</h2>
-      {categories.map((item) => (
+      <h2>Filter by State:</h2>
+      {filters.map((item) => (
         <button
           key={item._id}
           onClick={() => {
@@ -65,4 +65,4 @@ function CategoryMenu() {
   );
 }
 
-export default CategoryMenu;
+export default FilterMenu;

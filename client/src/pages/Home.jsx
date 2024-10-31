@@ -1,11 +1,11 @@
 import ProductList from "../components/ProductList";
-import CategoryMenu from "../components/CategoryMenu";
+import FilterMenu from "../components/FilterMenu";
 import Cart from "../components/Cart";
 
 const Home = () => {
   return (
     <div className="container">
-      <CategoryMenu />
+      <FilterMenu />
       <ProductList />
       <Cart />
     </div>
