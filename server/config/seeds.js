@@ -1,10 +1,10 @@
 const db = require('./connection');
-const { User, Product, Filter } = require('../models');
+const { User, FoodBank, Filter } = require('../models');
 const cleanDB = require('./cleanDB');
 
 db.once('open', async () => {
   await cleanDB('Filter', 'filters');
-  await cleanDB('Product', 'products');
+  await cleanDB('FoodBank', 'products');
   await cleanDB('User', 'users');
 
   const filters = await Filter.insertMany([
@@ -19,7 +19,7 @@ db.once('open', async () => {
 
   console.log('filters seeded');
 
-  const products = await Product.insertMany([
+  const products = await FoodBank.insertMany([
     {
       name: 'Harvest of Hope',
       description:
@@ -178,7 +178,7 @@ db.once('open', async () => {
 
   ]);
 
-  console.log('products seeded');
+  console.log('food banks seeded');
 
   await User.create({
     firstName: 'Pamela',

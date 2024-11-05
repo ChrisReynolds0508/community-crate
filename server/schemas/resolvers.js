@@ -1,4 +1,4 @@
-const { User, Product, Filter, Order } = require('../models');
+const { User, FoodBank, Filter, Order } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -20,10 +20,10 @@ const resolvers = {
         };
       }
 
-      return await Product.find(params).populate('filter');
+      return await FoodBank.find(params).populate('filter');
     },
     product: async (parent, { _id }) => {
-      return await Product.findById(_id).populate('filter');
+      return await FoodBank.findById(_id).populate('filter');
     },
     user: async (parent, args, context) => {
       if (context.user) {
