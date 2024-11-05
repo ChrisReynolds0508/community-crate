@@ -32,11 +32,12 @@ function Detail() {
       const item = {
         image: product.image,
         name: product.name,
+        description: product.description,
         _id: product._id,
         price: product.price,
         quantity: product.quantity,
       };
-      
+
       setCurrentProduct(item);
     }
     // retrieved from server

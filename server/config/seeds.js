@@ -24,7 +24,7 @@ db.once('open', async () => {
       name: 'Harvest of Hope',
       description:
         'Harvest of Hope is dedicated to providing nutritious food to those in need in New South Wales. Our mission is to ensure that no one goes hungry and we work with local farmers and volunteers to make a positive impact on our community. Donate a crate of fresh produce and pantry staples today!',
-      image: 'cookie-tin.jpg',
+      image: 'harvest-hope.jpg',
       filter: filters[0]._id,
       price: 15.00,
       quantity: 500
@@ -33,7 +33,7 @@ db.once('open', async () => {
       name: 'Food Bridge',
       description:
         'Food Bridge aims to connect surplus food with those who need it most in New South Wales. We partner with local businesses and organizations to rescue food that would otherwise go to waste. Our goal is to reduce food insecurity and promote sustainability in our community. Donate today and help us build a Food Bridge!',
-      image: 'canned-coffee.jpg',
+      image: 'food-bridge.jpg',
       filter: filters[0]._id,
       price: 20.00,
       quantity: 500
