@@ -83,7 +83,7 @@ db.once('open', async () => {
       name: 'Meal Mission',
       filter: filters[3]._id,
       description: 'Delivering balanced and nutritious meals to individuals and families in need, one plate at a time. Donate a meal today and join our Meal Mission!',
-      image: 'bedtime-book.jpg',
+      image: 'meal-mission.jpg',
       price: 15.50,
       quantity: 100
     },
