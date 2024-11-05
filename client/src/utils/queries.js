@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_PRODUCTS = gql`
+export const QUERY_FOODBANKS = gql`
   query getProducts($filter: ID) {
     products(filter: $filter) {
       _id
@@ -24,7 +24,7 @@ export const QUERY_CHECKOUT = gql`
   }
 `;
 
-export const QUERY_ALL_PRODUCTS = gql`
+export const QUERY_ALL_FOODBANKS = gql`
   {
     products {
       _id
