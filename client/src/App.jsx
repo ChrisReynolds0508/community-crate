@@ -1,3 +1,4 @@
+import { ChakraProvider, createSystem, defaultConfig } from "@chakra-ui/react";
 import { Outlet } from 'react-router-dom';
 import {
   ApolloClient,
@@ -6,6 +7,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+// Import ChakraProvider
 
 import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
@@ -29,15 +31,28 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const system = createSystem(defaultConfig, {
+  theme: {
+    tokens: {
+      fonts: {
+        heading: { value: `'Figtree', sans-serif` },
+        body: { value: `'Figtree', sans-serif` },
+      },
+    },
+  },
+})
+
+
+
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div>
+      <ChakraProvider value={system}> 
         <StoreProvider>
           <Nav />
           <Outlet />
         </StoreProvider>
-      </div>
+      </ChakraProvider>
     </ApolloProvider>
   );
 }
