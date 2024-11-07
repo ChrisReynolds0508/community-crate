@@ -1,4 +1,5 @@
 import { ChakraProvider, createSystem, defaultConfig } from "@chakra-ui/react";
+import { Box } from '@chakra-ui/react';
 import { Outlet } from 'react-router-dom';
 import {
   ApolloClient,
@@ -50,6 +51,9 @@ function App() {
       <ChakraProvider value={system}> 
         <StoreProvider>
           <Nav />
+          <Box bg="tomato" w="100%" p={4} color="white">
+            This is a Box component from Chakra UI
+          </Box>
           <Outlet />
         </StoreProvider>
       </ChakraProvider>
