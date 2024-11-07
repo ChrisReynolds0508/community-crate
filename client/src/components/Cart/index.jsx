@@ -7,6 +7,7 @@ import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
+import { Link } from "react-router-dom";
 import './style.css';
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
@@ -56,10 +57,20 @@ const Cart = () => {
 
   if (!state.cartOpen) {
     return (
-      <div className="cart-closed" onClick={toggleCart}>
+      <div className  onClick={toggleCart}>
         <span role="img" aria-label="trash">
-          🛒
-        </span>
+        <img 
+      src="../../images/donation.png"  // Update this path as needed
+      alt="Donation Icon"
+      style={{
+        width: '35px',     // Adjust size to fit within the nav
+        height: '35px',    // Adjust size to fit within the nav
+        marginLeft: '25px' ,// Adjust spacing if needed
+        borderRadius: '50%',
+        marginBottom: '10px',
+      }}
+    />
+    </span>
       </div>
     );
   }
@@ -69,7 +80,7 @@ const Cart = () => {
       <div className="close" onClick={toggleCart}>
         [close]
       </div>
-      <h2>Shopping Cart</h2>
+      <h2>Donation Cart</h2>
       {state.cart.length ? (
         <div>
           {state.cart.map((item) => (
@@ -80,9 +91,11 @@ const Cart = () => {
             <strong>Total: ${calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
+              <button onClick={submitCheckout}>Donate now</button>
             ) : (
+              <Link to="/login" style={{ textDecoration: 'none', color: 'inherit' }}>
               <span>(log in to check out)</span>
+              </Link>
             )}
           </div>
         </div>
@@ -91,7 +104,7 @@ const Cart = () => {
           <span role="img" aria-label="shocked">
             😱
           </span>
-          You haven't added anything to your cart yet!
+          No any donation item
         </h3>
       )}
     </div>

@@ -7,7 +7,7 @@ const Home = () => {
     <div className="container">
       <FilterMenu />
       <ProductList />
-      <Cart />
+      
     </div>
   );
 };
