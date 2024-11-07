@@ -91,10 +91,10 @@ const Cart = () => {
             <strong>Total: ${calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Donate now</button>
+              <button onClick={submitCheckout}>Donate Now</button>
             ) : (
               <Link to="/login" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <span>(log in to check out)</span>
+              <button>Login/signup to complete donation</button>
               </Link>
             )}
           </div>
@@ -104,7 +104,7 @@ const Cart = () => {
           <span role="img" aria-label="shocked">
             😱
           </span>
-          No any donation item
+          No pending donations
         </h3>
       )}
     </div>
