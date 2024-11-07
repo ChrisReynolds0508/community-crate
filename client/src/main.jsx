@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Main />
       },{
-        path: '/home',
+        path: '/foodbanks',
 element: <Home />
       },
       {
@@ -31,7 +31,7 @@ element: <Home />
         path: '/signup',
         element: <Signup />
       }, {
-        path: '/orderHistory',
+        path: '/donationhistory',
         element: <OrderHistory />
       }, {
         path: '/foodbanks/:id',
