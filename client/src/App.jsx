@@ -1,5 +1,4 @@
 import { ChakraProvider, createSystem, defaultConfig } from "@chakra-ui/react";
-import { Box } from '@chakra-ui/react';
 import { Outlet } from 'react-router-dom';
 import {
   ApolloClient,

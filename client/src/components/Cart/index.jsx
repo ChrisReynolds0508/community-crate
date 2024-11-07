@@ -57,7 +57,7 @@ const Cart = () => {
 
   if (!state.cartOpen) {
     return (
-      <div className  onClick={toggleCart}>
+      <div className="cart-icon" onClick={toggleCart}>
         <span role="img" aria-label="trash">
         <img 
       src="../../images/donation.png"  // Update this path as needed
