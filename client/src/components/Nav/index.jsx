@@ -12,22 +12,21 @@ function Nav() {
           position: 'fixed',
           width: '100%',
           zIndex: '100',
-         
         }}
-         className="flex-row px-1"
+        className="flex-row px-1"
       >
         
           <Link to="/" style={{ textDecoration: 'none' ,fontSize:'40px'}}>
             <span role="img" aria-label="shopping bag">🤝</span>
-            Community-Crate
+            Community Crate
           </Link>
         
 
         <nav style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
           <ul className="flex-row" style={{ listStyle: 'none',gap: '1rem'  }}>
             <li className="mx-1">
-              <Link to="/home" style={{ textDecoration: 'none' }}>
-                Home
+              <Link to="/foodbanks" style={{ textDecoration: 'none' }}>
+                Food Banks
               </Link>
             </li>
 
@@ -35,8 +34,8 @@ function Nav() {
             {Auth.loggedIn() ? (
               <>
                 <li className="mx-1">
-                  <Link to="/orderHistory" style={{ textDecoration: 'none' }}>
-                    Order History
+                  <Link to="/donationhistory" style={{ textDecoration: 'none' }}>
+                    Donation History
                   </Link>
                 </li>
                 <li className="mx-1">
