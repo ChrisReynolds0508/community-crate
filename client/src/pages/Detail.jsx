@@ -8,9 +8,9 @@ import {
   REMOVE_FROM_CART,
   UPDATE_CART_QUANTITY,
   ADD_TO_CART,
-  UPDATE_PRODUCTS,
+  UPDATE_FOODBANKS,
 } from '../utils/actions';
-import { QUERY_PRODUCTS } from '../utils/queries';
+import { QUERY_FOODBANKS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
 
@@ -20,7 +20,7 @@ function Detail() {
 
   const [currentProduct, setCurrentProduct] = useState({});
 
-  const { loading, data } = useQuery(QUERY_PRODUCTS);
+  const { loading, data } = useQuery(QUERY_FOODBANKS);
 
   const { products, cart } = state;
 
@@ -32,17 +32,18 @@ function Detail() {
       const item = {
         image: product.image,
         name: product.name,
+        description: product.description,
         _id: product._id,
         price: product.price,
         quantity: product.quantity,
       };
-      
+
       setCurrentProduct(item);
     }
     // retrieved from server
     else if (data) {
       dispatch({
-        type: UPDATE_PRODUCTS,
+        type: UPDATE_FOODBANKS,
         products: data.products,
       });
 
@@ -54,7 +55,7 @@ function Detail() {
     else if (!loading) {
       idbPromise('products', 'get').then((indexedProducts) => {
         dispatch({
-          type: UPDATE_PRODUCTS,
+          type: UPDATE_FOODBANKS,
           products: indexedProducts,
         });
       });

@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import ProductItem from '../ProductItem';
 import { useStoreContext } from '../../utils/GlobalState';
-import { UPDATE_PRODUCTS } from '../../utils/actions';
+import { UPDATE_FOODBANKS } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
-import { QUERY_PRODUCTS } from '../../utils/queries';
+import { QUERY_FOODBANKS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
 
@@ -12,12 +12,12 @@ function ProductList() {
 
   const { currentFilter } = state;
 
-  const { loading, data } = useQuery(QUERY_PRODUCTS);
+  const { loading, data } = useQuery(QUERY_FOODBANKS);
 
   useEffect(() => {
     if (data) {
       dispatch({
-        type: UPDATE_PRODUCTS,
+        type: UPDATE_FOODBANKS,
         products: data.products,
       });
       data.products.forEach((product) => {
@@ -26,7 +26,7 @@ function ProductList() {
     } else if (!loading) {
       idbPromise('products', 'get').then((products) => {
         dispatch({
-          type: UPDATE_PRODUCTS,
+          type: UPDATE_FOODBANKS,
           products: products,
         });
       });

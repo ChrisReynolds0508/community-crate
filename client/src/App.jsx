@@ -51,10 +51,9 @@ function App() {
       <ChakraProvider value={system}> 
         <StoreProvider>
           <Nav />
-          <Box bg="tomato" w="100%" p={4} color="white">
-            This is a Box component from Chakra UI
-          </Box>
+          <div style={{ paddingTop: '70px' }}>
           <Outlet />
+          </div>
         </StoreProvider>
       </ChakraProvider>
     </ApolloProvider>

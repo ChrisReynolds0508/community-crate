@@ -1,57 +1,73 @@
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
-
+import Cart from "../Cart";
 function Nav() {
-
-  function showNavigation() {
-    if (Auth.loggedIn()) {
-      return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/orderHistory">
-              Order History
-            </Link>
-          </li>
-          <li className="mx-1">
-            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-            <a href="/" onClick={() => Auth.logout()}>
-              Logout
-            </a>
-          </li>
-        </ul>
-      );
-    } else {
-      return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/signup">
-              Signup
-            </Link>
-          </li>
-          <li className="mx-1">
-            <Link to="/login">
-              Login
-            </Link>
-          </li>
-        </ul>
-      );
-    }
-  }
-
   return (
-    <header className="flex-row px-1">
-      <h1>
-        <Link to="/">
-          <span role="img" aria-label="shopping bag">🛍️</span>
-          -Shop-Shop
-        </Link>
-      </h1>
+    <div>
+      <header style={{
+          backgroundColor: 'black',
+          display: 'flex',
+          alignItems: 'center',
+          padding:'5px',
+          position: 'fixed',
+          width: '100%',
+          zIndex: '100',
+         
+        }}
+         className="flex-row px-1"
+      >
+        
+          <Link to="/" style={{ textDecoration: 'none' ,fontSize:'40px'}}>
+            <span role="img" aria-label="shopping bag">🤝</span>
+            Community-Crate
+          </Link>
+        
 
-      <nav>
-        {showNavigation()}
-      </nav>
-    </header>
+        <nav style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
+          <ul className="flex-row" style={{ listStyle: 'none',gap: '1rem'  }}>
+            <li className="mx-1">
+              <Link to="/home" style={{ textDecoration: 'none' }}>
+                Home
+              </Link>
+            </li>
+
+            {/* Conditional rendering based on Auth status */}
+            {Auth.loggedIn() ? (
+              <>
+                <li className="mx-1">
+                  <Link to="/orderHistory" style={{ textDecoration: 'none' }}>
+                    Order History
+                  </Link>
+                </li>
+                <li className="mx-1">
+                  <a href="/" onClick={() => Auth.logout()} style={{ textDecoration: 'none' }}>
+                    Logout
+                  </a>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="mx-1">
+                  <Link to="/signup" style={{ textDecoration: 'none' }}>
+                    Signup
+                  </Link>
+                </li>
+                <li className="mx-1">
+                  <Link to="/login" style={{ textDecoration: 'none' }}>
+                    Login
+                  </Link>
+                </li>
+              </>
+            )}
+
+          </ul>
+        </nav>
+        <Cart />
+      </header>
+    </div>
   );
 }
+ 
+
 
 export default Nav;
