@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
-function OrderHistory() {
+function DonationHistory() {
   const { data } = useQuery(QUERY_USER);
   let user;
 
@@ -14,13 +14,16 @@ function OrderHistory() {
   return (
     <>
       <div className="container my-1">
-        <Link to="/">← Back to Products</Link>
+        <Link to="/foodbanks">← Back to Food Banks</Link>
 
         {user ? (
           <>
             <h2>
-              Order History for {user.firstName} {user.lastName}
+              Hey, {user.firstName} {user.lastName}! 
             </h2>
+            <h3>
+              Here's your donation history:
+            </h3>
             {user.orders.map((order) => (
               <div key={order._id} className="my-2">
                 <h3>
@@ -41,6 +44,9 @@ function OrderHistory() {
                 </div>
               </div>
             ))}
+            <h2>
+              Thank you for your generosity!
+            </h2>
           </>
         ) : null}
       </div>
@@ -48,4 +54,4 @@ function OrderHistory() {
   );
 }
 
-export default OrderHistory;
+export default DonationHistory;
