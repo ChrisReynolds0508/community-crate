@@ -35,7 +35,9 @@ function App() {
       <div>
         <StoreProvider>
           <Nav />
+          <div style={{ paddingTop: '70px' }}>
           <Outlet />
+          </div>
         </StoreProvider>
       </div>
     </ApolloProvider>

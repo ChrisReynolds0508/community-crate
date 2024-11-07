@@ -16,14 +16,14 @@ const server = new ApolloServer({
 });
 
 // Connect to MongoDB using Mongoose
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 
-mongoose.connection.once('open', () => {
-  console.log('Connected to MongoDB');
-});
+// mongoose.connection.once('open', () => {
+//   console.log('Connected to MongoDB');
+// });
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async () => {

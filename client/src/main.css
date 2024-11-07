@@ -1,0 +1,32 @@
+.hero {
+    background-image: url('../images/landingpage.jpg'); /* Make sure this path is correct */
+    background-size: cover;
+    background-position: center;
+    margin-top: 0px;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.donation-info {
+    padding: 20px;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    font-weight: 200;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.liststyle {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    font-weight: 200;
+    margin-bottom: 15px;
+    font-style: italic;
+}
