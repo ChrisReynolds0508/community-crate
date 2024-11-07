@@ -8,7 +8,7 @@ import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import OrderHistory from './pages/OrderHistory';
+import DonationHistory from './pages/DonationHistory';
 import Success from './pages/Success';
 
 const router = createBrowserRouter([
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         element: <Main />
       },{
         path: '/foodbanks',
-element: <Home />
+        element: <Home />
       },
       {
         path: '/login',
@@ -32,7 +32,7 @@ element: <Home />
         element: <Signup />
       }, {
         path: '/donationhistory',
-        element: <OrderHistory />
+        element: <DonationHistory />
       }, {
         path: '/foodbanks/:id',
         element: <Detail />
