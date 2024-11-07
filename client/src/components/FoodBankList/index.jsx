@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import ProductItem from '../ProductItem';
+import FoodBankItem from '../FoodBankItem';
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_FOODBANKS } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
@@ -7,7 +7,7 @@ import { QUERY_FOODBANKS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
 
-function ProductList() {
+function FoodBankList() {
   const [state, dispatch] = useStoreContext();
 
   const { currentFilter } = state;
@@ -49,7 +49,7 @@ function ProductList() {
       {state.products.length ? (
         <div className="flex-row">
           {filterProducts().map((product) => (
-            <ProductItem
+            <FoodBankItem
               key={product._id}
               _id={product._id}
               image={product.image}
@@ -67,4 +67,4 @@ function ProductList() {
   );
 }
 
-export default ProductList;
+export default FoodBankList;
