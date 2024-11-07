@@ -34,7 +34,7 @@ element: <Home />
         path: '/orderHistory',
         element: <OrderHistory />
       }, {
-        path: '/products/:id',
+        path: '/foodbanks/:id',
         element: <Detail />
       }, {
         path: '/success',
