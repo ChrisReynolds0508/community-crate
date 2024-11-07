@@ -2,7 +2,6 @@ const express = require('express');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 const path = require('path');
-const mongoose = require('mongoose');
 const { authMiddleware } = require('./utils/auth');
 
 const { typeDefs, resolvers } = require('./schemas');
@@ -14,16 +13,6 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
-
-// Connect to MongoDB using Mongoose
-// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
-
-// mongoose.connection.once('open', () => {
-//   console.log('Connected to MongoDB');
-// });
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async () => {
