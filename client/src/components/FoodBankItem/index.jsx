@@ -4,6 +4,9 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 
+import { Badge, Box, HStack, Icon, Image, Text } from "@chakra-ui/react";
+import { HiStar } from "react-icons/hi";
+
 function FoodBankItem(item) {
   const [state, dispatch] = useStoreContext();
 
@@ -39,20 +42,26 @@ function FoodBankItem(item) {
   }
 
   return (
-    <div className="card px-1 py-1">
+    <Box maxW="sm" borderWidth="1px">
       <Link to={`/foodbanks/${_id}`}>
         <img
           alt={name}
           src={`/images/${image}`}
         />
-        <p>{name}</p>
+       <Box p="4" spaceY="2">
+       <HStack>
+       <Badge colorPalette="teal" variant="solid">
+        {name}
+        </Badge>
+        </HStack>
+      </Box>
       </Link>
-      <div>
-        {/* <div>{quantity} {pluralize("item", quantity)} in stock</div> */}
-        <span>${price}</span>
-      </div>
-      <button onClick={addToCart}>Add to cart</button>
-    </div>
+      <Box p="4" spaceY="2">
+        <Text>{quantity} {pluralize("item", quantity)} in stock</Text>
+        <Text>${price}</Text>
+        <button onClick={addToCart}>Add to cart</button>
+      </Box>
+    </Box>
   );
 }
 

@@ -43,7 +43,7 @@ function FilterMenu() {
 
   return (
     <div>
-      <h2>Filter by State:</h2>
+      
       {filters.map((item) => (
         <button
           key={item._id}
