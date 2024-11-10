@@ -45,9 +45,8 @@ function FoodBankList() {
 
   return (
     <div className="my-2">
-       <h2 style={{ position: 'relative', bottom: '0px', color: 'var(--light)', marginLeft:'20px' }}>
-        <span className='state' style={{ backgroundColor: 'darkgreen', borderRadius:'10px' , boxShadow: '10px 10px 15px rgba(2, 0, 0, 0.47)', padding:'5px'
-        }}>Food Banks to Crate:</span>
+       <h2 style={{ position: 'relative', bottom: '0px', color: 'var(--light)', marginLeft:'20px',  display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
+        <span className='state' style={{ backgroundColor: 'darkgreen', borderRadius:'10px' , boxShadow: '10px 10px 15px rgba(2, 0, 0, 0.47)', padding:'5px'}}>Food Banks to Crate:</span>
       </h2>
       {state.products.length ? (
         <div className="flex-row">
