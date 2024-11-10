@@ -36,7 +36,7 @@ function App() {
       <div>
         <StoreProvider>
           <Nav />
-          <div style={{ paddingTop: '70px' }}>
+          <div>
           <Outlet />
           </div>
           <Footer />

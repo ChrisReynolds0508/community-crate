@@ -1,7 +1,7 @@
 .hero {
     background-image: url('../public/images/carrots.jpg'); /* Make sure this path is correct */
     background-size: 100%;
-    background-position: center;
+    background-position: top;
     margin-top: 0px;
     height: 350px;
     display: flex;
@@ -15,7 +15,7 @@
 
 .donation-info {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     position: relative; 
     background-color: rgb(230, 147, 4);
@@ -33,6 +33,20 @@
     transition: background-size 0.4s;
     gap:50px;
 }
+
+.image{
+    width: 200px;
+    height: 200px;
+    border-radius: 0%;
+    border: 2px solid var(--dark);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative; 
+}
+
+
 
 .donation-info:hover {
     background-size: 100% 100%;

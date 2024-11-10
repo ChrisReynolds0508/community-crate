@@ -21,9 +21,10 @@ function Nav() {
           display: 'flex',
           alignItems: 'center',
           padding:'5px',
-          position: 'fixed',
+          position: 'relative',
           width: '100%',
           zIndex: '100',
+          
         }}
         className="flex-row px-1"
       >
