@@ -57,8 +57,8 @@ const Cart = () => {
 
   if (!state.cartOpen) {
     return (
-      <div className  onClick={toggleCart}>
-        <span role="img" aria-label="trash">
+      <div  onClick={toggleCart}>
+        <span  role="img" aria-label="trash">
         <img 
       src="../../images/donation.png"  // Update this path as needed
       alt="Donation Icon"
@@ -66,8 +66,12 @@ const Cart = () => {
         width: '35px',     // Adjust size to fit within the nav
         height: '35px',    // Adjust size to fit within the nav
         marginLeft: '25px' ,// Adjust spacing if needed
+        marginRight: '25px', // Adjust spacing if needed
+        marginTop: '10px',
         borderRadius: '50%',
-        marginBottom: '10px',
+        boxShadow: '10px 10px 15px rgba(2, 0, 0, 0.47)'
+
+        
       }}
     />
     </span>

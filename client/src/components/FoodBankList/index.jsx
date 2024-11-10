@@ -45,7 +45,10 @@ function FoodBankList() {
 
   return (
     <div className="my-2">
-      <h2>Food Banks to Crate:</h2>
+       <h2 style={{ position: 'relative', bottom: '0px', color: 'var(--light)', marginLeft:'20px' }}>
+        <span className='state' style={{ backgroundColor: 'darkgreen', borderRadius:'10px' , boxShadow: '10px 10px 15px rgba(2, 0, 0, 0.47)', padding:'5px'
+        }}>Food Banks to Crate:</span>
+      </h2>
       {state.products.length ? (
         <div className="flex-row">
           {filterProducts().map((product) => (
@@ -56,6 +59,7 @@ function FoodBankList() {
               name={product.name}
               price={product.price}
               quantity={product.quantity}
+             
             />
           ))}
         </div>
@@ -63,6 +67,7 @@ function FoodBankList() {
         <h3>You haven't added any products yet!</h3>
       )}
       {loading ? <img src={spinner} alt="loading" /> : null}
+     
     </div>
   );
 }
