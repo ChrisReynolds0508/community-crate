@@ -42,7 +42,7 @@ const DonateNow = () => {
                     <h2>Ways to Contribute</h2>
                     <ul>
                         <li><strong>Food Donations:</strong> Donate shelf-stable items or surplus food that can be safely distributed to those in need.</li>
-                        <li><strong> Volunteer Opportunities:</strong>Help sort, pack, and distribute food at food banks. Your time and energy are invaluable!</li>
+                        <li><strong> Volunteer Opportunities:</strong> Help sort, pack, and distribute food at food banks. Your time and energy are invaluable!</li>
                         <li><strong>Monetary Support:</strong> If you’re unable to volunteer or donate food, consider a financial donation to help us expand our reach and improve our resources.</li>
                         </ul>
                 </div>
