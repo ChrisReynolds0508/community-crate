@@ -163,7 +163,7 @@ db.once('open', async () => {
       name: 'Meals on Wheels SA',
       filter: filters[2]._id,
       description: 'Ensuring South Australians receive nutritious meals and social support through meal deliveries. Donate a meal today and support Meals on Wheels SA!',
-      image: 'mealsonwheels-sa.png',
+      image: 'mealsonwheels-sa.jpg',
       price: 16.50,
       quantity: 600
     },
