@@ -48,10 +48,9 @@ function FoodBankItem(item) {
         <p>{name}</p>
       </Link>
       <div>
-        {/* <div>{quantity} {pluralize("item", quantity)} in stock</div> */}
-        <span>${price}</span>
+        <span><strong>${price}</strong></span>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
+      <button onClick={addToCart}>Add Donation</button>
     </div>
   );
 }
