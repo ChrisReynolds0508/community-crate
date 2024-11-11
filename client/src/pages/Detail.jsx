@@ -95,10 +95,10 @@ function Detail() {
   return (
     <>
       {currentProduct && cart ? (
-        <div className="container my-1">
+        <div style={{ paddingLeft: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center' }} className="container my-1">
           <Link to="/foodbanks">← Back to Food Banks</Link>
 
-          <h2><strong>{currentProduct.name}</strong></h2>
+          <h2 ><strong>{currentProduct.name}</strong></h2>
 
           <p>{currentProduct.description}</p>
 
@@ -113,7 +113,7 @@ function Detail() {
               </strong></button>
           </p>
 
-          <div style={{ display: 'flex', justifyContent: 'center' , borderRadius:'10px'}}>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
             <img
               src={`/images/${currentProduct.image}`}
               alt={currentProduct.name}
