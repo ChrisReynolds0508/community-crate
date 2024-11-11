@@ -7,6 +7,8 @@ import {
 } from '../../utils/actions';
 import { QUERY_FILTERS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
+import '../../index.css';
+import sampleImage from '../../assets/tomato.jpg';
 
 function FilterMenu() {
   const [state, dispatch] = useStoreContext();
@@ -42,25 +44,32 @@ function FilterMenu() {
   };
 
   return (
-    <div>
-      <h2>Filter by State:</h2>
-      {filters.map((item) => (
+    <div style={{ position: 'relative', textAlign: 'center' }}>
+      <img src={sampleImage} alt="Sample" className='hero' style={{ width: '100%', borderBottom:'solid 1px black' }} />
+      <h2 style={{ position: 'inherit', bottom: '0px', color: 'var(--light)' , marginLeft:'20px' }}>
+        <span className='state' style={{ backgroundColor: 'darkgreen' , borderRadius:'10px', boxShadow: '10px 10px 15px rgba(2, 0, 0, 0.47) ', padding:
+        '5px'}}>Filter by State:</span>
+      </h2>
+      
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
+        {filters.map((item) => (
+          <button
+            key={item._id}
+            onClick={() => {
+              handleClick(item._id);
+            }}
+          >
+            {item.name}
+          </button>
+        ))}
         <button
-          key={item._id}
           onClick={() => {
-            handleClick(item._id);
+            handleClick('');
           }}
         >
-          {item.name}
+          All
         </button>
-      ))}
-      <button
-        onClick={() => {
-          handleClick('');
-        }}
-      >
-        All
-      </button>
+      </div>
     </div>
   );
 }

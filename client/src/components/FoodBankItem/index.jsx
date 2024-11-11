@@ -43,7 +43,7 @@ function FoodBankItem(item) {
       <Link to={`/foodbanks/${_id}`}>
         <img
           alt={name}
-          src={`/images/${image}`}
+          src={`../../images/${image}`}
         />
         <p>{name}</p>
       </Link>

@@ -1,20 +1,62 @@
 .hero {
-    background-image: url('../images/landingpage.jpg'); /* Make sure this path is correct */
-    background-size: cover;
-    background-position: center;
+    background-image: url('../public/images/carrots.jpg'); /* Make sure this path is correct */
+    background-size: 100%;
+    background-position: top;
     margin-top: 0px;
-    height: 550px;
+    height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    border-bottom:solid 1px black;
+    
 }
 
 .donation-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+    background-color: rgb(230, 147, 4);
+    border-radius: 15px;
     padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    z-index: 1;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-decoration: none;
+    background-image: linear-gradient(90deg, rgba(255, 247, 3, 0.42) 0% , rgba(251, 243, 8, 0) 100%);
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s;
+    gap:50px;
 }
 
+.image{
+    width: 200px;
+    height: 200px;
+    border-radius: 0%;
+    border: 2px solid var(--dark);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative; 
+}
+
+
+
+.donation-info:hover {
+    background-size: 100% 100%;
+    transition: background-size 0.4s;
+}
+
+.donation-info h2 {
+    
+    margin-bottom: 15px;
+}
 p {
     line-height: 1.6;
     font-size: 1.1rem;
@@ -29,4 +71,14 @@ p {
     font-weight: 200;
     margin-bottom: 15px;
     font-style: italic;
+}
+
+footer {
+    background-color: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 10px 0;
+    position:relative;
+    bottom: 0;
+    width: 100%;
 }

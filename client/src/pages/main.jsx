@@ -1,39 +1,57 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../main.css'; // You can create a CSS file for styles or keep them inline.
+import '../main.css';
 
 const DonateNow = () => {
     return (
         <div>
             <header className="hero">
-                <h1 className="display-4">Make a Difference</h1>
-                <p className="lead">Your donations can change lives!</p>
+                <h1 style={{fontSize:'80px', marginTop:'30px',fontFamily:'Arial'}}>Make a Difference</h1>
+                <p style={{fontSize:'60px' ,fontFamily:'Brush Script MT', padding:'10px',marginBottom:'30px', marginLeft:'20px'
+                }}>Your donations can change lives!</p>
             </header>
 
-            <div className="container donation-info">
-                <h2>About Us</h2>
-                <p>We are a non-profit organization dedicated to providing assistance to those in need. Your generous donations help us to support various causes, from healthcare and education to disaster relief and environmental conservation.</p>
-                
-                <h2>Our Mission</h2>
-                <p>Our mission is to empower individuals and communities by providing them with the necessary tools and resources to thrive. We believe in the power of collective action and the impact it can have on the world.</p>
-                
-                <h2>How Your Donation Helps</h2>
-                <ul className="liststyle">
-                    <li>Provides essential resources to underprivileged communities</li>
-                    <li>Supports educational programs for children</li>
-                    <li>Offers medical assistance to those in need</li>
-                    <li>Funds disaster relief efforts and recovery programs</li>
-                </ul>
+            <div>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap', marginTop:'15px'}}> 
+                    <button><a href='#about'>About Us</a></button>
+                    <button><a href='#mission'>Our Mission</a></button>
+                    <button><a href='#donation'>How Your Donation Helps</a></button>
+                    <button><a href='#contribute'>Ways to Contribute</a></button>
+                    <button><a href='#involved'>Get Involved</a></button>
+                </div>
+                <div className="donation-info" id='about'>
+                    <h2>About Us</h2>
+                    <p>We are a dedicated platform connecting kind-hearted individuals with food banks across Australia. Our mission is to fight hunger by facilitating food donations and volunteer support for local communities. We believe that no one should go hungry, and through your generosity, we aim to create a future where nutritious food is accessible to everyone.</p>
+                </div>
+                <div className="donation-info" id='mission'>
+                    <h2>Our Mission</h2>
+                    <p>Our mission is simple but impactful: to eliminate hunger and promote food security throughout Australia. We work with a network of food banks and community organizations to ensure that donations reach those who need them most. By supporting us, you’re helping to reduce food waste, uplift communities, and bring comfort to families facing food insecurity.</p>
+                </div>
+                <div className="donation-info" id='donation'>
+                    <h2>How Your Donation Helps</h2>
+                    <ul className="liststyle">
+                        <li><strong>Feeds families in need:</strong> Your contributions provide essential nourishment to families, children, and the elderly who struggle to afford healthy meals.</li>
+                        <li><strong>Supports local food banks:</strong> Your support strengthens food banks, allowing them to distribute more food to underserved communities.</li>
+                        <li><strong>Reduces food waste:</strong> By donating surplus food, you’re helping to divert resources from landfills and channel them to those in need.</li>
+                        <li><strong>Empowers communities:</strong> With access to nutritious food, individuals can focus on education, employment, and personal growth.</li>
+                    </ul>
+                </div>
+                <div className="donation-info" id='contribute'>
+                    <h2>Ways to Contribute</h2>
+                    <ul><li><strong>Food Donations:</strong> Donate shelf-stable items or surplus food that can be safely distributed to those in need.
+                        </li>
+                        <li>
+                       <strong> Volunteer Opportunities:</strong>Help sort, pack, and distribute food at food banks. Your time and energy are invaluable!
+                       <li>
+                       <strong>Monetary Support:</strong> If you’re unable to volunteer or donate food, consider a financial donation to help us expand our reach and improve our resources.
+                       </li>
+                        </li>
 
-                <h2>Ways to Contribute</h2>
-                <p>Your contributions can take many forms, whether it's a one-time donation, a monthly sponsorship, or volunteering your time. Every effort counts, and we are grateful for your support.</p>
-
-                <h2>Get Involved</h2>
-                <p>Join us in our mission to make the world a better place. Every contribution counts, and together we can create lasting change.</p>
+                        </ul>
+                </div>
+                <div className="donation-info" id='involved'>
+                    <h2>Get Involved</h2>
+                    <p>Join us in our mission to end hunger across Australia. By donating, volunteering, or simply spreading awareness, you can help create a lasting impact in the lives of countless Australians. Together, we can build a nation where everyone has access to nutritious food and no one goes to bed hungry.</p>
+                </div>
             </div>
-
-            <footer className="text-center mt-5">
-                <p>&copy; 2024 Donation Organization. All rights reserved.</p>
-            </footer>
         </div>
     );
 };
