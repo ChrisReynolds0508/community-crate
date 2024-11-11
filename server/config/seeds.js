@@ -8,13 +8,13 @@ db.once('open', async () => {
   await cleanDB('User', 'users');
 
   const filters = await Filter.insertMany([
+    { name: 'Australian Capital Territory' },
     { name: 'New South Wales' },
+    { name: 'Northern Territory' },
     { name: 'Queensland' },
     { name: 'South Australia' },
     { name: 'Tasmania' },
     { name: 'Western Australia' },
-    { name: 'Northern Territory' },
-    { name: 'Australian Capital Territory' },
   ]);
 
   console.log('filters seeded');

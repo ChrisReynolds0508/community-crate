@@ -82,9 +82,9 @@ const Cart = () => {
   return (
     <div className="cart">
       <div className="close" onClick={toggleCart}>
-        [close]
+        [X]
       </div>
-      <h2>Donation Cart</h2>
+      <h2>Donations</h2>
       {state.cart.length ? (
         <div>
           {state.cart.map((item) => (
@@ -105,9 +105,6 @@ const Cart = () => {
         </div>
       ) : (
         <h3>
-          <span role="img" aria-label="shocked">
-            😱
-          </span>
           No pending donations
         </h3>
       )}

@@ -1,6 +1,10 @@
 import '../main.css';
 
 const DonateNow = () => {
+    const goToFoodBanks = () => {
+        window.location.href = '/foodbanks';
+    };
+
     return (
         <div>
             <header className="hero">
@@ -10,13 +14,21 @@ const DonateNow = () => {
             </header>
 
             <div>
+            <div>
+            <div style={{ display: 'flex', justifyContent: 'center', padding: '30px', marginTop:'30px',  }}>
+                <button className='state' style={{backgroundColor: 'darkgreen', padding: '10px', fontSize:'50px', color:'#f3b706', borderRadius:'15px', fontFamily:'Arial'}} onClick={goToFoodBanks}>Food Banks</button>
+            </div>
+            </div>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap', marginTop:'15px'}}> 
+                    
                     <button><a href='#about'>About Us</a></button>
                     <button><a href='#mission'>Our Mission</a></button>
                     <button><a href='#donation'>How Your Donation Helps</a></button>
                     <button><a href='#contribute'>Ways to Contribute</a></button>
                     <button><a href='#involved'>Get Involved</a></button>
                 </div>
+              
+                
                 <div className="donation-info" id='about'>
                     <h2>About Us</h2>
                     <p>We are a dedicated platform connecting kind-hearted individuals with food banks across Australia. Our mission is to fight hunger by facilitating food donations and volunteer support for local communities. We believe that no one should go hungry, and through your generosity, we aim to create a future where nutritious food is accessible to everyone.</p>
@@ -36,20 +48,16 @@ const DonateNow = () => {
                 </div>
                 <div className="donation-info" id='contribute'>
                     <h2>Ways to Contribute</h2>
-                    <ul><li><strong>Food Donations:</strong> Donate shelf-stable items or surplus food that can be safely distributed to those in need.
-                        </li>
-                        <li>
-                       <strong> Volunteer Opportunities:</strong>Help sort, pack, and distribute food at food banks. Your time and energy are invaluable!
-                       <li>
-                       <strong>Monetary Support:</strong> If you’re unable to volunteer or donate food, consider a financial donation to help us expand our reach and improve our resources.
-                       </li>
-                        </li>
-
+                    <ul>
+                        <li><strong>Food Donations:</strong> Donate shelf-stable items or surplus food that can be safely distributed to those in need.</li>
+                        <li><strong> Volunteer Opportunities:</strong> Help sort, pack, and distribute food at food banks. Your time and energy are invaluable!</li>
+                        <li><strong>Monetary Support:</strong> If you’re unable to volunteer or donate food, consider a financial donation to help us expand our reach and improve our resources.</li>
                         </ul>
                 </div>
                 <div className="donation-info" id='involved'>
                     <h2>Get Involved</h2>
                     <p>Join us in our mission to end hunger across Australia. By donating, volunteering, or simply spreading awareness, you can help create a lasting impact in the lives of countless Australians. Together, we can build a nation where everyone has access to nutritious food and no one goes to bed hungry.</p>
+                   
                 </div>
             </div>
         </div>
