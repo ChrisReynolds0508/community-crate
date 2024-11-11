@@ -37,11 +37,9 @@ function Nav() {
 
         <nav style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
           <ul className="flex-row" style={{ listStyle: 'none', gap: '1rem' }}>
-            <li className="mx-1">
-              <Link to="/foodbanks" style={linkStyle} onMouseEnter={(e) => e.target.style.color = linkHoverStyle.color} onMouseLeave={(e) => e.target.style.color = ''}>
-                Food Banks
-              </Link>
-            </li>
+            
+             
+            
 
             {/* Conditional rendering based on Auth status */}
             {Auth.loggedIn() ? (
