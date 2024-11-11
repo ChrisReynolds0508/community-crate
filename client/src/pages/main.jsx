@@ -10,7 +10,7 @@ const DonateNow = () => {
             </header>
 
             <div>
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap', marginTop:'15px' }}> 
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap', marginTop:'15px'}}> 
                     <button><a href='#about'>About Us</a></button>
                     <button><a href='#mission'>Our Mission</a></button>
                     <button><a href='#donation'>How Your Donation Helps</a></button>

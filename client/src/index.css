@@ -36,7 +36,7 @@ body {
 }
 
 .hero {
-  background-image: url('../assets/tomato.jpg'); /* Make sure this path is correct */
+  background-image: url('../assets/tomato.jpg'); 
   background-size: 100%;
   background-position: center;
   margin-top: 0px;

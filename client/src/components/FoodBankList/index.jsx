@@ -49,7 +49,7 @@ function FoodBankList() {
         <span className='state' style={{ backgroundColor: 'darkgreen', borderRadius:'10px' , boxShadow: '10px 10px 15px rgba(2, 0, 0, 0.47)', padding:'5px'}}>Food Banks to Crate:</span>
       </h2>
       {state.products.length ? (
-        <div className="flex-row">
+        <div className="flex-row" style={{justifyContent:'center'}}>
           {filterProducts().map((product) => (
             <FoodBankItem
               key={product._id}
