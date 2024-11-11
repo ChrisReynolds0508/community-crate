@@ -1,6 +1,10 @@
 import '../main.css';
 
 const DonateNow = () => {
+    const goToFoodBanks = () => {
+        window.location.href = '/foodbanks';
+    };
+
     return (
         <div>
             <header className="hero">
@@ -36,20 +40,16 @@ const DonateNow = () => {
                 </div>
                 <div className="donation-info" id='contribute'>
                     <h2>Ways to Contribute</h2>
-                    <ul><li><strong>Food Donations:</strong> Donate shelf-stable items or surplus food that can be safely distributed to those in need.
-                        </li>
-                        <li>
-                       <strong> Volunteer Opportunities:</strong>Help sort, pack, and distribute food at food banks. Your time and energy are invaluable!
-                       <li>
-                       <strong>Monetary Support:</strong> If you’re unable to volunteer or donate food, consider a financial donation to help us expand our reach and improve our resources.
-                       </li>
-                        </li>
-
+                    <ul>
+                        <li><strong>Food Donations:</strong> Donate shelf-stable items or surplus food that can be safely distributed to those in need.</li>
+                        <li><strong> Volunteer Opportunities:</strong>Help sort, pack, and distribute food at food banks. Your time and energy are invaluable!</li>
+                        <li><strong>Monetary Support:</strong> If you’re unable to volunteer or donate food, consider a financial donation to help us expand our reach and improve our resources.</li>
                         </ul>
                 </div>
                 <div className="donation-info" id='involved'>
                     <h2>Get Involved</h2>
                     <p>Join us in our mission to end hunger across Australia. By donating, volunteering, or simply spreading awareness, you can help create a lasting impact in the lives of countless Australians. Together, we can build a nation where everyone has access to nutritious food and no one goes to bed hungry.</p>
+                    <button onClick={goToFoodBanks}>Food Banks</button>
                 </div>
             </div>
         </div>
